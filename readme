@@ -1,0 +1,14 @@
+avilable queries from stock market api
+-getprices
+https://api.stockmarketapi.in/api/v1/getprices?token=YourApiKey&nsecode=NSEcode
+-indexprice
+https://api.stockmarketapi.in/api/v1/indexprice?token=YourApiKey&indexcode=indexCode
+-topgainers
+-toplosers
+-topvolume
+-week52high
+-week52low
+https://api.stockmarketapi.in/api/v1/index?token=YourApiKey
+
+all stocks
+https://api.stockmarketapi.in/api/v1/allstocks?token=apikey
