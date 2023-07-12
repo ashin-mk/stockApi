@@ -14,7 +14,7 @@ const query='getprices'
 app.use(cors())
 app.use(express.json())
 
-app.listen(3001,(err)=>{
+app.listen(process.env.PORT,(err)=>{
     !err?console.log('server is running...'):console.log('err running srever')
 })
 
