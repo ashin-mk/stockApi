@@ -50,7 +50,7 @@ return filterData.sort(function(a,b){
 
 app.get('/magicData',async(req,res)=>{
   try {
-      response= await  axios.get(`${baseUrl}allstocks?token=${process.env._STOCK_API}`)
+      response= await  axios.get(`${baseUrl}allstocks?token=${process.env.STOCK_API}`)
       data=filterData(response?.data?.data)
        res.status(200).send({data:JSON.stringify({data:data.splice(0,100),pagination:null})})
     } catch (error) {
@@ -64,7 +64,7 @@ app.get('/marketData',async(req,res)=>{
     const recordToFetch=pageNo*10 -indices?.[req?.headers?.query]?.length
     const dataLength= recordToFetch>0?recordToFetch: 10
     const startingIndex=(pageNo-1)*10
-    const data= await  axios.get(`${baseUrl}${query}?token=${process.env._STOCK_API}&nsecode=${indices?.[req?.headers?.query]?.slice(startingIndex,dataLength+startingIndex)?.join(',')}`)
+    const data= await  axios.get(`${baseUrl}${query}?token=${process.env.STOCK_API}&nsecode=${indices?.[req?.headers?.query]?.slice(startingIndex,dataLength+startingIndex)?.join(',')}`)
     res.status(200).send({data:JSON.stringify({data:data?.data?.data,pagination:{length:Math.ceil(indices?.[req?.headers?.query]?.length/10)}})})
   } catch (error) {
     console.log(error)
