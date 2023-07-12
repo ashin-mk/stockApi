@@ -21,18 +21,18 @@ app.get('/',(req,res)=>{
   res.send('welcome to stock App!!!')
 })
 //db Connection
-mongoose.connect(process.env.devdbUrl).then(()=>console.log('successfully connected to db')).catch((err)=>console.log(err))
+//mongoose.connect(process.env.devdbUrl).then(()=>console.log('successfully connected to db')).catch((err)=>console.log(err))
 
 //middlewares 
 //app.use("/","specify router")
 
 //function to know the market is open or not
-const getMarketStaus=()=>{
-    if(data?.[0]?.TodayClose){
-        closed=true
-        return 'closed'
-    }
-}
+// const getMarketStaus=()=>{
+//     if(data?.[0]?.TodayClose){
+//         closed=true
+//         return 'closed'
+//     }
+// }
 
 const filterData=(filterData)=>{
   console.log(typeof(filterData))
