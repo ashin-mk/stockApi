@@ -14,10 +14,12 @@ const query='getprices'
 app.use(cors())
 app.use(express.json())
 
-app.listen(process.env.PORT,(err)=>{
+app.listen(process.env.PORT|| 3001,(err)=>{
     !err?console.log('server is running...'):console.log('err running srever')
 })
-
+app.get('/',(req,res)=>{
+  res.send('welcome to stock App!!!')
+})
 //db Connection
 mongoose.connect(process.env.devdbUrl).then(()=>console.log('successfully connected to db')).catch((err)=>console.log(err))
 
