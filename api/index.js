@@ -1,2 +1,2 @@
-import Server from '../Server'
+import app from '../Server'
 export default Server
